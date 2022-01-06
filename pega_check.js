@@ -6,6 +6,7 @@ const options = {method: 'GET', headers: {Accept: 'application/json'}};
 
 var apiButton = document.getElementById("buttonSearch");
 var msg = document.getElementById("msg");
+var ierror = document.getElementById("ierror");
 var pegas_red = document.getElementById("pegas_red");
 var pegas_green = document.getElementById("pegas_green");
 
@@ -115,25 +116,28 @@ apiButton.addEventListener("click", function() {
     var pWallet2;
     var pWallet3;
     var counter = 0;
+    ierror.innerHTML = "";
 
     fetch(apiUrl, options)
     .then(response => response.json())
-    .then(data => {
-        
-        data.result.forEach(element => {
+    .then(data => { 
+          
+            data.result.forEach(element => {
 
-            id = element["tokenID"];
-            from = element["from"];
-            to = element["to"];
-            tstmp = element["timeStamp"];
+                id = element["tokenID"];
+                from = element["from"];
+                to = element["to"];
+                tstmp = element["timeStamp"];
 
-            if(!ids.includes(id))
-                ids.push(id);
+                if(!ids.includes(id))
+                    ids.push(id);
 
-        });
-
+            });
         
         console.log("Ids: " + ids);
         createMsg(ids);
     })
+    .catch((error) => {
+        ierror.innerHTML = "Please choose a valid wallet address like 0x...";
+      });
 });
