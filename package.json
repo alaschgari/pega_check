@@ -2,6 +2,8 @@
   "dependencies": {
     "use-wallet": "^0.13.4",
     "web3connect": "^1.0.0-beta.33",
-    "web3modal": "^1.9.4"
+    "web3modal": "^1.9.4",
+    "trim-newlines": ">=3.0.1",
+    "axios": ">=0.21.2"
   }
 }
