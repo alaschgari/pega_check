@@ -50,7 +50,8 @@ function createMsg(ids){
             var pid;
             var poid;
             var pen;
-            var pim;        
+            var pim;
+            var pcr; //can_race        
             var link;
             var img;
 
@@ -59,6 +60,7 @@ function createMsg(ids){
             if(poid.toLowerCase() == walletAddress.toLowerCase()) {
                 pid = text.pega.id;
                 pen = text.pega.energy;
+                pcr = text.pega.canRace;
     
                 if(text.pega.design.avatar != "")
                     pim = text.pega.design.avatar;
@@ -78,7 +80,12 @@ function createMsg(ids){
                 //console.log(":" + link);
     
                 if (pen >= critical_value){
-                    img.style.borderColor = "red";
+                    
+                    if (pcr)
+                        img.style.borderColor = "red";
+                    else
+                        img.style.borderColor = "grey";
+
                     link.appendChild(img);
                     pegas_red.appendChild(link);
                     reds++;
