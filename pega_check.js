@@ -104,7 +104,7 @@ function createMsg(ids){
 apiButton.addEventListener("click", function() {
 
     var walletAddress = document.getElementById("inputWallet").value;
-    var apiUrl = 'https://api.polygonscan.com/api?module=account&action=tokennfttx&contractaddress=0xd50d167dd35d256e19e2fb76d6b9bf9f4c571a3e&address=' + walletAddress + '&page=1&offset=100&sort=asc&apikey=' + apiKey;
+    var apiUrl = 'https://api.polygonscan.com/api?module=account&action=tokennfttx&contractaddress=0xd50d167dd35d256e19e2fb76d6b9bf9f4c571a3e&address=' + walletAddress + '&page=1&sort=asc&apikey=' + apiKey; 
 
     var ids = [];
     var buys = [];
@@ -115,7 +115,6 @@ apiButton.addEventListener("click", function() {
     var pWallet;
     var pWallet2;
     var pWallet3;
-    var counter = 0;
     ierror.innerHTML = "";
 
     fetch(apiUrl, options)
