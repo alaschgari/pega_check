@@ -112,9 +112,6 @@ apiButton.addEventListener("click", function() {
     var id;
     var from;
     var to;
-    var pWallet;
-    var pWallet2;
-    var pWallet3;
     ierror.innerHTML = "";
 
     fetch(apiUrl, options)
