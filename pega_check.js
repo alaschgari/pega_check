@@ -77,7 +77,7 @@ function createMsg(ids){
     
                 //console.log(":" + link);
     
-                if (pen > critical_value){
+                if (pen >= critical_value){
                     img.style.borderColor = "red";
                     link.appendChild(img);
                     pegas_red.appendChild(link);
@@ -93,7 +93,7 @@ function createMsg(ids){
 
     });
     var sum = reds + greens;
-    msg.innerHTML = reds + "/" + sum + " Pega have more energy than value " + critical_value + "!";
+    msg.innerHTML = reds + "/" + sum + " Pega have more or equal energy than value " + critical_value + "!";
     //console.log("msg: " + msg);
 })
     
